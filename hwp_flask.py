@@ -44,7 +44,7 @@ def extract_text():
     
     # 업로드 파일 저장
     file_name = file.filename
-    file.save(file.filename)
+    file.save(file_name)
     
     # HWP 텍스트 추출 실행
     hwp_jar_path = "./hwplib-1.1.8.jar"
@@ -55,7 +55,7 @@ def extract_text():
         os.remove(file_name)
     
     return jsonify({
-        "filename": file.filename,
+        "filename": file_name,
         "text": text
     })
 
